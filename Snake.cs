@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace snek
 {
     class Snake
     {
-        List<PictureBox> snakePixels = new List<PictureBox>();
+        public List<PictureBox> snakePixels = new List<PictureBox>();
         public Snake()
         {
             InitializeSnake();
@@ -20,7 +21,16 @@ namespace snek
             PictureBox snakePixel = new PictureBox();
             snakePixel.Height = 20;
             snakePixel.Width = 20;
+            snakePixel.BackColor = Color.Orange;
             snakePixels.Add(snakePixel);
+        }
+
+        public void Render()
+        {
+            foreach(var sp in snakePixels)
+            {
+
+            }
         }
     }
 }

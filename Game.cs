@@ -13,6 +13,7 @@ namespace snek
     public partial class Game : Form
     {
         Area area = new Area();
+        Snake snake = new Snake();
         public Game()
         {
             InitializeComponent();
@@ -26,6 +27,9 @@ namespace snek
             this.Controls.Add(area);
             this.Height = 600;
             this.Width = 600;
+
+            //snake body
+            this.Controls.Add(snake.snakePixels[0]);
         }
     }
 }
