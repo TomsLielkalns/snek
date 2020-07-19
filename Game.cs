@@ -50,6 +50,44 @@ namespace snek
 
             //snake body
             snake.Render(this);
+
+            //keyboard controller handeler
+            this.KeyDown += new KeyEventHandler(Game_KeyDown);
+        }
+
+        private void Game_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.D:
+                    if (snake.HorizontalVelocity != -1)
+                    {
+                        snake.HorizontalVelocity = 1;
+                    }
+                    snake.VerticalVelocity = 0;
+                    break;
+                case Keys.A:
+                    if (snake.HorizontalVelocity != 1)
+                    {
+                        snake.HorizontalVelocity = -1;
+                    }
+                    snake.VerticalVelocity = 0;
+                    break;
+                case Keys.S:
+                    snake.HorizontalVelocity = 0;
+                    if (snake.VerticalVelocity != -1)
+                    {
+                        snake.VerticalVelocity = 1;
+                    }
+                    break;
+                case Keys.W:
+                    snake.HorizontalVelocity = 0;
+                    if (snake.VerticalVelocity != 1)
+                    {
+                        snake.VerticalVelocity = -1;
+                    }
+                    break;
+            }
         }
     }
 }
