@@ -36,7 +36,7 @@ namespace snek
 
         private void MainTimerTick(object sender, EventArgs e)
         {
-
+            snake.Move();
         }
 
         private void InitializeGame()

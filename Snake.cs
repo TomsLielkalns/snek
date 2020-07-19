@@ -12,7 +12,7 @@ namespace snek
     {
         public int HorizontalVelocity { get; set; } = 0;
         public int VerticalVelocity { get; set; } = 0;
-        public int Step { get; set; } = 0;
+        public int Step { get; set; } = 20;
 
         public List<PictureBox> snakePixels = new List<PictureBox>();
         public Snake()
@@ -50,7 +50,11 @@ namespace snek
 
         public void Move()
         {
-            for (int i = snakePixels.Count -1; i > 0; i--)
+            if (this.HorizontalVelocity == 0 && this.VerticalVelocity == 0)
+            {
+                return;
+            }
+            for (int i = snakePixels.Count - 1; i > 0; i--)
             {
                 snakePixels[i].Location = snakePixels[i - 1].Location;
             }
